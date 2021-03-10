@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    var _echatServer = ['e.echatsoft.com'];
+    window._echat=window._echat||function(){(_echat.q=_echat.q||[]).push(arguments)};_echat.l=+new Date;
+    _echat('initParam', { companyId: 521889});
+    (function () {
+        var echat = document.createElement('script');
+        echat.type = 'text/javascript';
+        echat.async = true;
+        echat.id = 'echatmodulejs';
+        echat.setAttribute('charset','UTF-8');
+        echat.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'www.echatsoft.com/visitor/echat.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(echat, s);
+    })();
+    window.pushVisitorEvent = function(){
+    ECHAT.pushVisitorEvent({
+                    customizeMsgType: 1,
+                    eventId: Math.random() * 10,
+                    title: 'hahahahha',
+                    content: "123",
+                    imageUrl: 'https://oa.rainbowred.com/image/1527507466134.jpg',
+                    url: "apiUrl('123')",
+                    memo: "评价450"
+                }, function (res) {
+                    //发送完毕后的回调
+                    console.log('##pushVisitorEvent callback', res);
+                    if (res.successful) {
+                        //  关闭浮窗
+                        // ECHAT.closeFramePage()
+                    }
+                });
+}
+</script>
+<body>
+    <input class="item-info" type="button" onclick=window.pushVisitorEvent() value="點擊發生圖文">
+</body>
+</html>

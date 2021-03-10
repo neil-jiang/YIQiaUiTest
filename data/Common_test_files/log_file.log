@@ -1,0 +1,42 @@
+add device 1: /dev/input/event4
+  name:     "msm8974-taiko-mtp-snd-card Headset Jack"
+  events:
+    SW  (0005): 0002  0004  0006  000e  000f  0010  0011 
+  input props:
+    <none>
+add device 2: /dev/input/event3
+  name:     "msm8974-taiko-mtp-snd-card Button Jack"
+  events:
+    KEY (0001): 00e2  0101  0102  0103  0104  0105  0106  0107 
+  input props:
+    <none>
+add device 3: /dev/input/event0
+  name:     "qpnp_pon"
+  events:
+    KEY (0001): 0072  0074 
+  input props:
+    INPUT_PROP_TOPBUTTONPAD
+could not get driver version for /dev/input/mice, Not a typewriter
+add device 4: /dev/input/event1
+  name:     "gpio-keys"
+  events:
+    KEY (0001): 0073 
+  input props:
+    <none>
+add device 5: /dev/input/event2
+  name:     "atmel-maxtouch"
+  events:
+    KEY (0001): 0066  008b  009e 
+    ABS (0003): 002f  : value 0, min 0, max 11, fuzz 0, flat 0, resolution 0
+                0030  : value 0, min 0, max 255, fuzz 0, flat 0, resolution 0
+                0035  : value 0, min 0, max 1079, fuzz 0, flat 0, resolution 0
+                0036  : value 0, min 0, max 1919, fuzz 0, flat 0, resolution 0
+                0039  : value 0, min 0, max 65535, fuzz 0, flat 0, resolution 0
+                003a  : value 0, min 0, max 255, fuzz 0, flat 0, resolution 0
+  input props:
+    INPUT_PROP_DIRECT
+0000
+0000
+0000
+0000
+0000
