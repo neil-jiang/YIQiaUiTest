@@ -300,12 +300,16 @@ class PcWebPage(Base):
         """
         return self.find_ele(ele_type='id', ele='textInput')
 
-    def locate_robot_content(self):
+    def locate_robot_content(self,system_text=True):
         """
-        定位机器人消息
+        定位机器人文本消息
+        :param system_text:为真返回系统提示语：列如禁用词提示语，未识别答案提示语
         :return:
         """
-        return self.find_eles(ele_type='css', ele='li[class="clearfix msg-robot mode0"]')
+        if system_text:
+            return self.find_eles(ele_type='css', ele='div[class="msg-item-robot"]')
+        else:
+            return self.find_eles(ele_type='css', ele='div[class="msg-item-robot"] > p')
 
     def lcoate_robot_welcome(self, fqa):
         """
@@ -345,6 +349,11 @@ class PcWebPage(Base):
         return target_question_lists_box
 
     def locate_confirm_question_solved_button(self,choice):
+        """
+        定位问题解决按钮
+        :param choice:为真定位“是”为假定位“否”
+        :return:
+        """
         if choice:
             return self.find_eles(ele_type='css',ele="div.feedback-btn-solve")
         else:
