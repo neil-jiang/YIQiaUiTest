@@ -105,7 +105,7 @@ for each in list1:
     a = json.dumps(a,ensure_ascii=False)
     print(a)
     # print(json.loads(a))
-#
+print(time.strftime("%Y_%m_%d_%H_%M_%S",time.localtime()),111111111)
 # str = {'s_file': 'D:\\YiQiaUiTest\\data\\Common_test_files\\txt_file.txt', 'v_file': 'D:\\YiQiaUiTest\\data\\Common_test_files\\txt_file.txt', 'timeout': 20}
 # a = json.dumps(str)
 

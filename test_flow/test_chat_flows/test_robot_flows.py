@@ -72,6 +72,11 @@ class TestRobotFlows(TestCase):
             self.s_driver.driver.save_screenshot(filename=file_name)
             raise AssertionError
 
+    @parameterized.expand(OpExcel(r'D:\YiQiaUiTest\data\test_case\chat_test_cases.xlsx').get_excel_data('一洽_对话测试用例',
+                                                                                                         [53],
+                                                                                                         columns=[3],
+                                                                                                         json_columns=[
+                                                                                                             5]))
     def test_input_text(self,case_name,prompt):
         self.__dict__['_testMethodDoc'] = case_name
         """
@@ -174,6 +179,8 @@ class TestRobotFlows(TestCase):
             file_name = "../../data/error_img/chat_img/访客端%s失败_%s.png" % \
                         (case_name, time.strftime("%Y_%m_%d_%H_%M_%S", time.localtime()))
             self.s_driver.driver.save_screenshot(filename=file_name)
+
+    def
 
 
 

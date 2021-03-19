@@ -19,10 +19,17 @@ from base.base import OpExcel
 from PIL import Image
 import requests
 import time
+from  base.base import OpMail
 
-driver = webdriver.Chrome()
-driver.get("https://www.baidu.com/")
-
-print(driver.get_cookies())
-a =driver.execute_script("return document.cookie;")
-print(a)
+if __name__ == '__main__':
+    sender = "627359686@qq.com"
+    receiver = ["952618746@qq.com"]
+    subject = "Basic_chat_flows"
+    while True:
+        text = "dasdsadsa测试发邮件现在时间是：%s" % time.strftime("%Y_%m_%d_%H_%M_%S",time.localtime())
+        print(text)
+        myemail = OpMail(smtp_user="627359686@qq.com", smtp_password="lcioruzvrwxbbfhi")
+        myemail.set_base_info(sender=sender, receiver=receiver, subject=subject, text=text)
+        myemail.add_attr('D:\YiQiaUiTest\data\screenshot_img\chat_img\访客端访客目标图片截图_2021_02_19_17_51_28.png')
+        myemail.send_eail(receiver=receiver)
+        time.sleep(2)
